@@ -26,7 +26,7 @@ There are two classes of actors in the project:
   which is hardcoded in the code - *5150*). An instance of the RemoteActor contains the name of the host in its name (which is probably not necessary
   but makes debugging and investigation easier).
   
-From teh perspective of actual deployment as used during the tests, the actos instances were as follows:
+From the perspective of the actual deployment as used during the tests, the actor instances were as follows:
 * Host: **pi1** , **LocalActor** - *akka.tcp://LocalActorSystem@PI1:35713/user/LocalActor*   (the port will be random here and likely different each time)
 * Host: **pi2** , **RemoteActor** - *akka.tcp://RemoteActorSystem@PI2:5150/user/RemoteActorPI2*
 * Host: **pi3** , **RemoteActor** - *akka.tcp://RemoteActorSystem@PI3:5150/user/RemoteActorPI3*
