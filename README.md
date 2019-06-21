@@ -96,7 +96,7 @@ so just make sure all *Remote* actor systems are started before *Local* actor sy
 
 * Java: 1.8
 * Scala: 2.12.8
-* Akka: 2.5.22
+* Akka: 2.5.23
 * Sbt: 1.2.7
 * Sbt-assembly: 0.14.9 - [sbt-assembly](https://github.com/sbt/sbt-assembly)
 
