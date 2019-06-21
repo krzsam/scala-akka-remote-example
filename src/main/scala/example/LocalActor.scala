@@ -11,18 +11,18 @@ import scala.util.Random
 object LocalActor {
   def props( remoteHosts: Array[String], promise: PromiseRef[Any] ) : Props = Props( new LocalActor( remoteHosts, promise ) )
 
-  case class SendTo( message: Any, host: String ) {}
-
-  case class RemoteTerminateRequest(msg: String = "" ) {}
-  case class RemoteTerminateResponse(msg: String = "" ) {}
+  abstract sealed class Messages
+  case class RemoteTerminateResponse(msg: String = "" ) extends Messages
+  case class SendTo( message: Any, host: String ) extends Messages
 }
 
 class LocalActor( remoteHosts: Array[String], promise: PromiseRef[Any] ) extends Actor with ActorLogging {
   val hostToActorMap: mutable.Map[String, ActorSelection] = mutable.Map()
   val actorsCompletionMap: mutable.Map[ActorRef, Boolean] = mutable.Map()
+
   remoteHosts foreach  {
     host =>
-      val remotePath = s"akka.tcp://RemoteActorSystem@$host:${RemoteActor.port}/user/RemoteActor$host"
+      val remotePath = s"akka.tcp://RemoteActorSystem@$host:${RemoteActor.Port}/user/RemoteActor$host"
       val remoteSelection = context.actorSelection( remotePath )
       log.info( s"Adding remote actor on path: $remotePath ref: $remoteSelection" )
       hostToActorMap += ( ( host, remoteSelection ) )

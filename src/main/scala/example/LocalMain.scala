@@ -7,7 +7,8 @@ import akka.actor.ActorSystem
 import akka.pattern.PromiseRef
 import akka.util.Timeout
 import com.typesafe.config.ConfigFactory
-import example.LocalActor.{SendTo, RemoteTerminateRequest, props}
+import example.LocalActor.{SendTo, props}
+import example.RemoteActor.RemoteTerminateRequest
 import org.slf4j.{Logger, LoggerFactory}
 
 import scala.concurrent.duration.FiniteDuration

@@ -20,7 +20,7 @@ object RemoteMain {
     LOG.info( s"Starting REMOTE actor system on $hostname" )
 
     val configFile = getClass.getClassLoader.getResourceAsStream("remote_system.conf")
-    val configContent = Source.fromInputStream( configFile ).mkString.replaceAll( "%HOSTNAME%", hostname ).replaceAll( "%PORT%", RemoteActor.port)
+    val configContent = Source.fromInputStream( configFile ).mkString.replaceAll( "%HOSTNAME%", hostname ).replaceAll( "%PORT%", RemoteActor.Port)
     LOG.info( s"REMOTE config: $configContent")
 
     val config = ConfigFactory.parseString( configContent )
