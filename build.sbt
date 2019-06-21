@@ -10,6 +10,6 @@ resolvers += Resolver.url("https://repo.scala-sbt.org/scalasbt/sbt-plugin-releas
 
 libraryDependencies += "org.slf4j" % "slf4j-api" % "1.7.25"
 libraryDependencies += "org.slf4j" % "slf4j-log4j12" % "1.7.26"
-libraryDependencies += "com.typesafe.akka" %% "akka-actor" % "2.5.22"
-libraryDependencies += "com.typesafe.akka" %% "akka-remote" % "2.5.22"
+libraryDependencies += "com.typesafe.akka" %% "akka-actor" % "2.5.23"
+libraryDependencies += "com.typesafe.akka" %% "akka-remote" % "2.5.23"
 
